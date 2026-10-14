@@ -141,7 +141,9 @@
   .hero .lead{color:var(--muted-on-dark);font-size:1.15rem;}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;}
   .hero-note{margin-top:26px;font-size:.92rem;color:var(--muted-on-dark);display:flex;gap:10px;align-items:flex-start;}
-  .hero-note svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--brick-light);}
+  #heroMeasureNote{cursor:pointer;}
+#heroMeasureNote:hover,#heroMeasureNote:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:3px;}
+.hero-note svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--brick-light);}
 
   .hero-visual{
     position:relative;
@@ -693,9 +695,6 @@
 <a href="#contact">Контакты</a>
 </nav>
 <div class="head-actions">
-<a aria-label="Позвонить" class="icon-btn" href="tel:+79969597922">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h3l2 5-2.3 2a12 12 0 006 6l2-2.3 5 2v3a2 2 0 01-2.1 2C10.6 20.6 3.4 13.4 3.5 5.6A2 2 0 015.5 3.5"></path></svg>
-</a>
 <a aria-label="Написать на почту" class="icon-btn" href="mailto:bogdanova690142@yandex.ru">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
 </a>
@@ -714,16 +713,12 @@
 <h1>Кирпичный фасад,<br/>который <em>гнётся</em>, а не трескается</h1>
 <p class="lead">Производим и монтируем гибкий клинкер, ригель и доску — лёгкую облицовку, которая повторяет кирпичную кладку на любых поверхностях: от прямой стены до угла и колонны.</p>
 <div class="hero-ctas">
-<a class="btn btn-primary" href="#calculator">
+<a class="btn btn-primary" href="#calculator" id="heroCalcBtn">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
             Рассчитать стоимость
           </a>
-<a class="btn btn-ghost on-dark" href="tel:+79969597922">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h3l2 5-2.3 2a12 12 0 006 6l2-2.3 5 2v3a2 2 0 01-2.1 2C10.6 20.6 3.4 13.4 3.5 5.6A2 2 0 015.5 3.5"></path></svg>
-            Позвонить
-          </a>
 </div>
-<p class="hero-note">
+<p class="hero-note" id="heroMeasureNote" role="link" tabindex="0" aria-label="Бесплатный выезд на замер — оставить заявку">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 2l3.5 7 7.5 1-5.5 5.3L18.7 22 12 18.3 5.3 22 6.5 15.3 1 10l7.5-1z"></path></svg>
           Бесплатный выезд на замер — по Калининграду и в радиусе 1 км от города.
         </p>
@@ -861,7 +856,7 @@
 <h3>Нужен другой цвет? Сделаем под ваш проект</h3>
 <p>Показанные образцы — стандартные. Наше производство может изготовить материал в любой цветовой гамме: темнее, светлее, с добавлением нужных оттенков. Окончательный цвет мы подбираем вместе с вами прямо на производстве, чтобы результат точно подошёл к вашему объекту.</p>
 </div>
-<a class="btn btn-primary cc-btn" href="#contact">Обсудить свой цвет</a>
+<a class="btn btn-primary cc-btn" href="#contact" id="customColorBtn">Обсудить свой цвет</a>
 </div>
 <details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><span aria-hidden="true" class="flexbrick-material-icon">▤</span><span class="flexbrick-material-name">Гибкий клинкер</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-gk">
 <p class="lead" style="margin-bottom:22px;"><strong>Формат (штучный):</strong> 250 × 65 × 4 мм, вес 80 г.</p>
@@ -982,7 +977,7 @@
 <div class="showcase-card">
 <span class="badge">Бесплатно — Калининград + 1 км</span>
 <h3>Выезд на замер</h3>
-<p>Приедем, замерим объект и посчитаем точную стоимость материала и монтажа. За пределами зоны — уточним стоимость выезда по телефону.</p>
+<p>Приедем, замерим объект и посчитаем точную стоимость материала и монтажа. За пределами зоны — уточним стоимость выезда при ответе на заявку.</p>
 <a class="btn btn-primary" href="#contact">Оставить заявку</a>
 </div>
 </div>
@@ -1124,7 +1119,7 @@
 </details>
 <details>
 <summary>Какие услуги вы предоставляете?<span class="plus"></span></summary>
-<p>Производство и монтаж гибкого клинкера, ригеля и доски, а также бесплатный выезд на замер по Калининграду и в радиусе 1 км от города. За пределами этой зоны стоимость выезда уточняем по телефону.</p>
+<p>Производство и монтаж гибкого клинкера, ригеля и доски, а также бесплатный выезд на замер по Калининграду и в радиусе 1 км от города. За пределами этой зоны стоимость выезда уточняем при ответе на заявку.</p>
 </details>
 <details>
 <summary>В какое время года можно делать монтаж?<span class="plus"></span></summary>
@@ -1220,11 +1215,7 @@
 <div>
 <p class="eyebrow">Контакты</p>
 <h2>Оформите заявку на замер</h2>
-<p class="lead" style="margin-bottom:32px;">Заполните форму — свяжемся, уточним детали. По Калининграду и в радиусе 1 км замер бесплатный, за пределами зоны — обсудим стоимость выезда по телефону.</p>
-<div class="contact-info-item">
-<span class="ic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h3l2 5-2.3 2a12 12 0 006 6l2-2.3 5 2v3a2 2 0 01-2.1 2C10.6 20.6 3.4 13.4 3.5 5.6A2 2 0 015.5 3.5"></path></svg></span>
-<div><h4>Телефон</h4><p><a href="tel:+79969597922">+7 (996) 959-79-22</a></p></div>
-</div>
+<p class="lead" style="margin-bottom:32px;">Заполните форму — свяжемся, уточним детали. По Калининграду и в радиусе 1 км замер бесплатный, за пределами зоны — обсудим стоимость выезда при ответе на заявку.</p>
 <div class="contact-info-item">
 <span class="ic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
 <div><h4>Электронная почта</h4><p><a href="mailto:bogdanova690142@yandex.ru">bogdanova690142@yandex.ru</a></p></div>
@@ -1292,7 +1283,7 @@
 <a href="#contact">Контакты</a>
 </nav>
 <button class="policy-link foot-policy" id="openPolicyFooter" type="button">Политика обработки персональных данных</button>
-<address class="foot-addr">Производство: Калининградская область, Зеленоградский район, пос. Сосновка, ул. Лучистая, д. 6 · <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%2C%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BE%D0%BA%20%D0%A1%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9B%D1%83%D1%87%D0%B8%D1%81%D1%82%D0%B0%D1%8F%2C%206" rel="noopener" target="_blank">на карте</a><br/>Тел.: <a href="tel:+79969597922">+7 (996) 959-79-22</a><br/>Почта: <a href="mailto:bogdanova690142@yandex.ru">bogdanova690142@yandex.ru</a></address>
+<address class="foot-addr">Производство: Калининградская область, Зеленоградский район, пос. Сосновка, ул. Лучистая, д. 6 · <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%2C%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BE%D0%BA%20%D0%A1%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9B%D1%83%D1%87%D0%B8%D1%81%D1%82%D0%B0%D1%8F%2C%206" rel="noopener" target="_blank">на карте</a><br/>Почта: <a href="mailto:bogdanova690142@yandex.ru">bogdanova690142@yandex.ru</a></address>
 </div>
 <div class="foot-bottom">
 <p style="margin:0;">Собственное производство гибкого клинкера, ригеля и доски в Калининграде. Отделка фасадов и интерьеров, монтаж под ключ, бесплатный замер по городу и в радиусе 1 км.</p>
@@ -1302,10 +1293,6 @@
 <!-- FAB -->
 <div class="fab-wrap">
 <div class="fab-menu" id="fabMenu">
-<a class="fab-item" href="tel:+79969597922">
-<span class="dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h3l2 5-2.3 2a12 12 0 006 6l2-2.3 5 2v3a2 2 0 01-2.1 2C10.6 20.6 3.4 13.4 3.5 5.6A2 2 0 015.5 3.5"></path></svg></span>
-      Позвонить
-    </a>
 <a class="fab-item" href="#contact" id="askQuestion">
 <span class="dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M8 10h.01M12 10h.01M16 10h.01M21 12a9 9 0 11-9-9 9 9 0 019 9z"></path></svg></span>
       Задать вопрос
@@ -1430,6 +1417,15 @@
       calcLines.push('Монтаж (' + zoneLabel + '): ' + matArea + ' м² × ' + fmtMoney(mountPrice) + '/м² = ' + fmtMoney(mountTotal));
       total += mountTotal;
       hasCalc = true;
+    }
+
+    var intro = (window.flexRequestTopic === 'color')
+      ? 'Хочу обсудить свой цвет и оставить заявку.'
+      : 'Хочу оставить заявку на выезд на замер. Свяжитесь со мной, пожалуйста.';
+    if (!hasCalc){
+      lines = ['Заявка с сайта FlexBrick', intro, '', 'Контактные данные:', 'Имя: ' + name, 'Телефон: ' + phone];
+    } else if (window.flexRequestTopic === 'color'){
+      lines.splice(1, 0, intro);
     }
 
     if (hasCalc){
@@ -1894,6 +1890,40 @@
     list.querySelectorAll('[data-clip]').forEach(function(el){var active=el===button;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));});
     player.play().then(function(){box.classList.add('playing');}).catch(function(){box.classList.remove('playing');});
   });
+})();
+</script>
+<script>
+// «Рассчитать стоимость» ведёт к калькулятору, «Бесплатный выезд на замер» — к форме заявки (с учётом закреплённой шапки)
+(function(){
+  function goTo(id, focusId){
+    return function(e){
+      var target = document.getElementById(id);
+      if(!target) return;
+      if(e) e.preventDefault();
+      var head = document.querySelector('header');
+      var offset = head ? head.offsetHeight : 0;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+      if(focusId){
+        setTimeout(function(){
+          var f = document.getElementById(focusId);
+          if(f){ try { f.focus({ preventScroll: true }); } catch(err) { f.focus(); } }
+        }, 600);
+      }
+    };
+  }
+  var toForm = goTo('contact', 'f-name');
+  var btn = document.getElementById('heroCalcBtn');
+  if(btn) btn.addEventListener('click', function(e){ window.flexRequestTopic = null; goTo('calculator')(e); });
+  var colorBtn = document.getElementById('customColorBtn');
+  if(colorBtn) colorBtn.addEventListener('click', function(e){ window.flexRequestTopic = 'color'; toForm(e); });
+  var note = document.getElementById('heroMeasureNote');
+  if(note){
+    note.addEventListener('click', function(e){ window.flexRequestTopic = 'measure'; toForm(e); });
+    note.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ window.flexRequestTopic = 'measure'; toForm(e); }
+    });
+  }
 })();
 </script>
 </body>
