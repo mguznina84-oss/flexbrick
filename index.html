@@ -821,7 +821,7 @@
 .rate-text{margin-left:8px;font-size:.9rem;color:var(--muted);}
 .field .opt{font-weight:400;color:var(--muted);}
 .field textarea{resize:vertical;min-height:110px;}
-.review-ch{flex:1 1 120px;justify-content:center;padding:13px 14px;font-size:.92rem;}
+.review-send{width:100%;justify-content:center;gap:10px;margin-top:4px;}
 @media (max-width:520px){ .review-modal-card{padding:24px 18px;} .rate-star svg{width:30px;height:30px;} }
 </style>
 </head>
@@ -1719,7 +1719,7 @@
 <div class="modal-card review-modal-card">
 <button aria-label="Закрыть" class="modal-close" id="closeReview" type="button">×</button>
 <h3 id="reviewTitle">Оставить отзыв</h3>
-<p class="review-note">Отзыв придёт нам, и после проверки мы разместим его на сайте.</p>
+<p class="review-note">Отзыв придёт нам на электронную почту, и после проверки мы разместим его на сайте.</p>
 <p class="review-label">Ваша оценка</p>
 <div aria-label="Оценка от 1 до 5" class="rate" id="reviewRate" role="radiogroup">
 <button aria-checked="false" aria-label="1 из 5" class="rate-star" data-v="1" role="radio" type="button"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></button>
@@ -1747,12 +1747,7 @@
 <input id="r-consent" type="checkbox"/>
 <span>Согласен(-на) на <button class="policy-link" id="openPolicyReview" type="button">обработку персональных данных</button> и публикацию отзыва на сайте</span>
 </label>
-<p class="calc-step-label" style="margin-bottom:10px;">Отправить отзыв в:</p>
-<div class="channel-buttons">
-<button class="btn review-ch channel-mail" data-rch="email" type="button">Эл. почта</button>
-<button class="btn review-ch channel-max" data-rch="max" type="button">MAX</button>
-<button class="btn review-ch channel-tg" data-rch="telegram" type="button">Telegram</button>
-</div>
+<button class="btn btn-primary review-send" data-rch="email" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>Отправить отзыв на почту</button>
 <p aria-live="polite" class="form-status" id="reviewStatus"></p>
 </div>
 </div>
@@ -2230,7 +2225,7 @@
     if(link){ var a=document.createElement('a'); a.href=link; a.textContent=label; a.className='btn btn-primary'; a.style.cssText='margin-top:8px;display:inline-flex;font-size:14px;padding:10px 16px;'; box.appendChild(a); }
     status.insertAdjacentElement('afterend',box); area.focus(); area.select();
   }
-  [].slice.call(modal.querySelectorAll('.review-ch')).forEach(function(btn){
+  [].slice.call(modal.querySelectorAll('.review-send')).forEach(function(btn){
     btn.addEventListener('click',function(){
       if(!validate()) return;
       var text=buildText(), ch=btn.getAttribute('data-rch');
@@ -2238,7 +2233,8 @@
       if(ch==='email'){
         var href='mailto:'+REV_EMAIL+'?subject='+encodeURIComponent('Отзыв с сайта FlexBrick')+'&body='+encodeURIComponent(text);
         copy(text).then(function(){
-          say('Текст отзыва скопирован. <a href="'+href+'">Открыть письмо с готовым текстом</a> или отправьте его вручную на <a href="mailto:'+REV_EMAIL+'">'+REV_EMAIL+'</a>.', true);
+          say('Открываем почту с готовым письмом — просто нажмите «Отправить». Если почта не открылась, текст отзыва уже скопирован: отправьте его на <a href="mailto:'+REV_EMAIL+'">'+REV_EMAIL+'</a> или <a href="'+href+'">откройте письмо ещё раз</a>.', true);
+          window.location.href=href;
         });
         return;
       }
