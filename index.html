@@ -802,6 +802,28 @@
 .cmp .cmp-no{color:#9A8E7A;}
 @media (max-width:760px){ .cmp{font-size:.84rem;} .cmp th,.cmp td{padding:11px 10px;} .cmp tbody th{position:sticky;left:0;z-index:1;box-shadow:1px 0 0 #EFE7D8;} }
 </style>
+<style id="flexbrick-review-style">
+.review-empty{max-width:640px;margin:0 auto;text-align:center;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius-m);padding:36px 28px;}
+.review-empty h3{margin:12px 0 8px;}
+.review-empty p{color:var(--muted);margin:0 auto 22px;max-width:480px;}
+.review-empty-stars{display:flex;gap:6px;justify-content:center;color:#E3A33B;}
+.review-empty-stars svg{width:26px;height:26px;}
+.review-modal-card{max-width:600px;width:100%;}
+.review-modal-card h3{margin:0 0 6px;}
+.review-note{color:var(--muted);font-size:.92rem;margin:0 0 18px;}
+.review-label{font-size:.9rem;font-weight:600;color:var(--charcoal);margin:0 0 6px;}
+.rate{display:flex;align-items:center;gap:4px;margin-bottom:18px;flex-wrap:wrap;}
+.rate-star{background:none;border:0;padding:4px;cursor:pointer;color:var(--line);line-height:0;border-radius:8px;}
+.rate-star svg{width:34px;height:34px;transition:transform .12s;}
+.rate-star:hover svg{transform:scale(1.12);}
+.rate-star.on{color:#E3A33B;}
+.rate-star:focus-visible{outline:3px solid var(--brick-light);}
+.rate-text{margin-left:8px;font-size:.9rem;color:var(--muted);}
+.field .opt{font-weight:400;color:var(--muted);}
+.field textarea{resize:vertical;min-height:110px;}
+.review-ch{flex:1 1 120px;justify-content:center;padding:13px 14px;font-size:.92rem;}
+@media (max-width:520px){ .review-modal-card{padding:24px 18px;} .rate-star svg{width:30px;height:30px;} }
+</style>
 </head>
 <body>
 <header>
@@ -1203,54 +1225,13 @@
 <div class="section-head center">
 <p class="eyebrow">Отзывы клиентов</p>
 <h2>Отзывы наших клиентов</h2>
-<p class="lead">Здесь появятся реальные отзывы и пожелания клиентов — присылайте текст, имя и объект, и мы разместим их тут.</p>
+<p class="lead">Уже облицевали дом с FlexBrick? Расскажите, как вам результат, — ваш отзыв поможет другим сделать выбор.</p>
 </div>
-<div class="grid-3">
-<div class="review-card">
-<svg class="quote-mark" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M7 8a3 3 0 00-3 3v5h5v-5H6a2 2 0 012-2V8z"></path><path d="M17 8a3 3 0 00-3 3v5h5v-5h-3a2 2 0 012-2V8z"></path></svg>
-<div class="stars">
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-</div>
-<p class="text">Отзыв появится здесь — пришлите текст от клиента.</p>
-<div class="who">
-<p class="name">Имя клиента</p>
-<p class="meta">Тип объекта, город</p>
-</div>
-</div>
-<div class="review-card">
-<svg class="quote-mark" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M7 8a3 3 0 00-3 3v5h5v-5H6a2 2 0 012-2V8z"></path><path d="M17 8a3 3 0 00-3 3v5h5v-5h-3a2 2 0 012-2V8z"></path></svg>
-<div class="stars">
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-</div>
-<p class="text">Отзыв появится здесь — пришлите текст от клиента.</p>
-<div class="who">
-<p class="name">Имя клиента</p>
-<p class="meta">Тип объекта, город</p>
-</div>
-</div>
-<div class="review-card">
-<svg class="quote-mark" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M7 8a3 3 0 00-3 3v5h5v-5H6a2 2 0 012-2V8z"></path><path d="M17 8a3 3 0 00-3 3v5h5v-5h-3a2 2 0 012-2V8z"></path></svg>
-<div class="stars">
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-<svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg>
-</div>
-<p class="text">Отзыв появится здесь — пришлите текст от клиента.</p>
-<div class="who">
-<p class="name">Имя клиента</p>
-<p class="meta">Тип объекта, город</p>
-</div>
-</div>
+<div class="review-empty">
+<div class="review-empty-stars"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></div>
+<h3>Станьте первым, кто оставит отзыв</h3>
+<p>Поставьте оценку и напишите пару слов о материале, монтаже или нашей работе. После проверки мы разместим отзыв на сайте.</p>
+<button class="btn btn-primary" id="openReview" type="button">Оставить отзыв</button>
 </div>
 </div>
 </section>
@@ -1734,6 +1715,47 @@
     });
   });
 </script>
+<div aria-hidden="true" aria-labelledby="reviewTitle" class="modal" id="reviewModal" role="dialog">
+<div class="modal-card review-modal-card">
+<button aria-label="Закрыть" class="modal-close" id="closeReview" type="button">×</button>
+<h3 id="reviewTitle">Оставить отзыв</h3>
+<p class="review-note">Отзыв придёт нам, и после проверки мы разместим его на сайте.</p>
+<p class="review-label">Ваша оценка</p>
+<div aria-label="Оценка от 1 до 5" class="rate" id="reviewRate" role="radiogroup">
+<button aria-checked="false" aria-label="1 из 5" class="rate-star" data-v="1" role="radio" type="button"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></button>
+<button aria-checked="false" aria-label="2 из 5" class="rate-star" data-v="2" role="radio" type="button"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></button>
+<button aria-checked="false" aria-label="3 из 5" class="rate-star" data-v="3" role="radio" type="button"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></button>
+<button aria-checked="false" aria-label="4 из 5" class="rate-star" data-v="4" role="radio" type="button"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></button>
+<button aria-checked="false" aria-label="5 из 5" class="rate-star" data-v="5" role="radio" type="button"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></button>
+<span class="rate-text" id="rateText">Нажмите на звёздочку</span>
+</div>
+<div class="field-row">
+<div class="field">
+<label for="r-name">Имя</label>
+<input autocomplete="name" id="r-name" placeholder="Как вас зовут" type="text"/>
+</div>
+<div class="field">
+<label for="r-object">Объект и город <span class="opt">(необязательно)</span></label>
+<input id="r-object" placeholder="Например: фасад дома, Зеленоградск" type="text"/>
+</div>
+</div>
+<div class="field">
+<label for="r-text">Ваш отзыв</label>
+<textarea id="r-text" placeholder="Что понравилось, как выглядит фасад, как прошёл монтаж…" rows="5"></textarea>
+</div>
+<label class="consent-row">
+<input id="r-consent" type="checkbox"/>
+<span>Согласен(-на) на <button class="policy-link" id="openPolicyReview" type="button">обработку персональных данных</button> и публикацию отзыва на сайте</span>
+</label>
+<p class="calc-step-label" style="margin-bottom:10px;">Отправить отзыв в:</p>
+<div class="channel-buttons">
+<button class="btn review-ch channel-mail" data-rch="email" type="button">Эл. почта</button>
+<button class="btn review-ch channel-max" data-rch="max" type="button">MAX</button>
+<button class="btn review-ch channel-tg" data-rch="telegram" type="button">Telegram</button>
+</div>
+<p aria-live="polite" class="form-status" id="reviewStatus"></p>
+</div>
+</div>
 <div aria-hidden="true" class="modal" id="policyModal">
 <div class="modal-card">
 <button aria-label="Закрыть" class="modal-close" id="closePolicy" type="button">×</button>
@@ -2143,6 +2165,90 @@
       if(e.key === 'Enter' || e.key === ' '){ window.flexRequestTopic = 'measure'; toForm(e); }
     });
   }
+})();
+</script>
+<script id="flexbrick-review-js">
+// Окно «Оставить отзыв»: оценка, имя, текст → копируем и открываем почту / MAX / Telegram
+(function(){
+  var REV_EMAIL='flexbrick_39@mail.ru';
+  var REV_MAX='https://max.ru/u/f9LHodD0cOLhrjKRdRV2br1-doDo0_tW6ZvjS0dF_LauZdzuBnW1nWxojf4';
+  var REV_TG='https://t.me/+79969597922';
+  var modal=document.getElementById('reviewModal'); if(!modal) return;
+  var openBtn=document.getElementById('openReview');
+  var status=document.getElementById('reviewStatus');
+  var stars=[].slice.call(modal.querySelectorAll('.rate-star'));
+  var rateText=document.getElementById('rateText');
+  var words=['','Плохо','Так себе','Нормально','Хорошо','Отлично'];
+  var rating=0;
+  function setRating(v){
+    rating=v;
+    stars.forEach(function(b){ var on=+b.getAttribute('data-v')<=v; b.classList.toggle('on',on); b.setAttribute('aria-checked', +b.getAttribute('data-v')===v ? 'true':'false'); });
+    rateText.textContent = v ? (v+' из 5 — '+words[v]) : 'Нажмите на звёздочку';
+    if(v){ status.classList.remove('show'); }
+  }
+  stars.forEach(function(b){ b.addEventListener('click',function(){ setRating(+b.getAttribute('data-v')); }); });
+  function open(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); setTimeout(function(){ (stars[0]||modal).focus(); },50); }
+  function close(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+  if(openBtn) openBtn.addEventListener('click',open);
+  document.getElementById('closeReview').addEventListener('click',close);
+  modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && modal.classList.contains('open')){ var pm=document.getElementById('policyModal'); if(!(pm && pm.classList.contains('open'))) close(); } });
+  var pol=document.getElementById('openPolicyReview');
+  if(pol) pol.addEventListener('click',function(e){ e.preventDefault(); var pm=document.getElementById('policyModal'); if(pm){ pm.classList.add('open'); pm.setAttribute('aria-hidden','false'); } });
+  function say(msg,html){ if(html) status.innerHTML=msg; else status.textContent=msg; status.classList.add('show'); }
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function buildText(){
+    var lines=['Отзыв с сайта FlexBrick','Оценка: '+'★★★★★'.slice(0,rating)+'☆☆☆☆☆'.slice(0,5-rating)+' ('+rating+' из 5)','Имя: '+val('r-name')];
+    if(val('r-object')) lines.push('Объект: '+val('r-object'));
+    lines.push('','Отзыв:',val('r-text'));
+    return lines.join('\n');
+  }
+  function validate(){
+    if(!rating){ say('Поставьте оценку — нажмите на звёздочку.'); (stars[4]||stars[0]).focus(); return false; }
+    if(!val('r-name')){ say('Укажите, пожалуйста, ваше имя.'); document.getElementById('r-name').focus(); return false; }
+    if(val('r-text').length<5){ say('Напишите несколько слов об отзыве.'); document.getElementById('r-text').focus(); return false; }
+    if(!document.getElementById('r-consent').checked){ say('Отметьте согласие на обработку данных и публикацию отзыва.'); document.getElementById('r-consent').focus(); return false; }
+    return true;
+  }
+  function copy(text){
+    var t=document.createElement('textarea'); t.value=text; t.setAttribute('readonly','');
+    t.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none;';
+    document.body.appendChild(t); t.focus(); t.select(); t.setSelectionRange(0,t.value.length);
+    var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+    t.remove();
+    if(!ok && navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(text).then(function(){return true;},function(){return false;}); }
+    return Promise.resolve(ok);
+  }
+  function manual(text,link,label){
+    var old=document.getElementById('reviewCopyBox'); if(old) old.remove();
+    say('Телефон запретил автоматическое копирование. Выделите текст ниже, скопируйте его и отправьте нам.');
+    var box=document.createElement('div'); box.id='reviewCopyBox';
+    box.style.cssText='margin-top:10px;padding:12px;border:1px solid #d4b49e;border-radius:12px;background:#fff;';
+    var area=document.createElement('textarea'); area.readOnly=true; area.value=text; area.setAttribute('aria-label','Текст отзыва для копирования');
+    area.style.cssText='width:100%;min-height:110px;box-sizing:border-box;font:14px/1.4 inherit;padding:8px;border:1px solid #d4b49e;border-radius:8px;';
+    box.appendChild(area);
+    if(link){ var a=document.createElement('a'); a.href=link; a.textContent=label; a.className='btn btn-primary'; a.style.cssText='margin-top:8px;display:inline-flex;font-size:14px;padding:10px 16px;'; box.appendChild(a); }
+    status.insertAdjacentElement('afterend',box); area.focus(); area.select();
+  }
+  [].slice.call(modal.querySelectorAll('.review-ch')).forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(!validate()) return;
+      var text=buildText(), ch=btn.getAttribute('data-rch');
+      var old=document.getElementById('reviewCopyBox'); if(old) old.remove();
+      if(ch==='email'){
+        var href='mailto:'+REV_EMAIL+'?subject='+encodeURIComponent('Отзыв с сайта FlexBrick')+'&body='+encodeURIComponent(text);
+        copy(text).then(function(){
+          say('Текст отзыва скопирован. <a href="'+href+'">Открыть письмо с готовым текстом</a> или отправьте его вручную на <a href="mailto:'+REV_EMAIL+'">'+REV_EMAIL+'</a>.', true);
+        });
+        return;
+      }
+      var link = ch==='max' ? REV_MAX : REV_TG, name = ch==='max' ? 'MAX' : 'Telegram';
+      copy(text).then(function(ok){
+        if(ok){ say('Отзыв скопирован. Вставьте его в переписку '+name+' и отправьте. Спасибо!'); window.location.href=link; }
+        else manual(text,link,'Открыть переписку '+name);
+      });
+    });
+  });
 })();
 </script>
 </body>
