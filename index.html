@@ -824,6 +824,42 @@
 .review-send{width:100%;justify-content:center;gap:10px;margin-top:4px;}
 @media (max-width:520px){ .review-modal-card{padding:24px 18px;} .rate-star svg{width:30px;height:30px;} }
 </style>
+<style id="flexbrick-review2-style">
+.reviews-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto;}
+.reviews-list:has(> .review-card:only-child){max-width:680px;}
+.review-real .text{font-style:normal;color:var(--ink);font-size:1rem;line-height:1.6;}
+.stars-gold{color:#E3A33B !important;}
+.stars-gold svg{width:18px !important;height:18px !important;}
+.review-photo{margin:0;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--sand);}
+.review-photo img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;}
+.review-cta{text-align:center;margin-top:32px;}
+.review-cta p{color:var(--muted);margin:0 0 14px;}
+.review-photo-hint{display:flex;gap:10px;align-items:flex-start;background:var(--sand);border-radius:12px;padding:12px 14px;font-size:.88rem;color:var(--ink);margin:-4px 0 18px;line-height:1.45;}
+.review-photo-hint svg{width:22px;height:22px;flex:none;color:var(--brick);margin-top:1px;}
+</style>
+<style id="flexbrick-review-photos-style">
+.review-card.has-photos{padding:0;overflow:hidden;gap:0;}
+.reviews-list:has(> .review-card:only-child){max-width:1000px;}
+.review-card.has-photos{display:grid;grid-template-columns:1.05fr 1fr;}
+.rv-gallery{display:flex;flex-direction:column;gap:6px;padding:6px;background:var(--sand);}
+.rv-gallery button{border:0;padding:0;background:none;cursor:zoom-in;display:block;overflow:hidden;border-radius:12px;}
+.rv-gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.rv-gallery button:hover img{transform:scale(1.04);}
+.rv-main{aspect-ratio:4/3;}
+.rv-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.rv-thumb{aspect-ratio:1/1;}
+.rv-gallery button:focus-visible{outline:3px solid var(--brick-light);outline-offset:2px;}
+.rv-body{padding:28px;display:flex;flex-direction:column;gap:12px;}
+@media (max-width:760px){ .review-card.has-photos{grid-template-columns:1fr;} .rv-body{padding:22px;} }
+.rv-lb{position:fixed;inset:0;z-index:3000;background:rgba(12,10,8,.94);display:none;align-items:center;justify-content:center;padding:calc(60px + env(safe-area-inset-top,0px)) 12px calc(56px + env(safe-area-inset-bottom,0px));}
+.rv-lb.open{display:flex;}
+.rv-lb img{max-width:100%;max-height:100%;border-radius:10px;object-fit:contain;}
+.rv-lb-close,.rv-lb-nav{position:absolute;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;cursor:pointer;display:grid;place-items:center;}
+.rv-lb-close{top:calc(12px + env(safe-area-inset-top,0px));right:14px;width:46px;height:46px;font-size:30px;line-height:1;}
+.rv-lb-nav{top:50%;transform:translateY(-50%);width:48px;height:48px;font-size:26px;}
+.rv-lb-prev{left:12px;} .rv-lb-next{right:12px;}
+.rv-lb-cap{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--cream);font-size:.92rem;padding:0 16px;}
+</style>
 </head>
 <body>
 <header>
@@ -1225,12 +1261,32 @@
 <div class="section-head center">
 <p class="eyebrow">Отзывы клиентов</p>
 <h2>Отзывы наших клиентов</h2>
-<p class="lead">Уже облицевали дом с FlexBrick? Расскажите, как вам результат, — ваш отзыв поможет другим сделать выбор.</p>
+<p class="lead">Что говорят клиенты о материале и монтаже FlexBrick.</p>
 </div>
-<div class="review-empty">
-<div class="review-empty-stars"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></div>
-<h3>Станьте первым, кто оставит отзыв</h3>
-<p>Поставьте оценку и напишите пару слов о материале, монтаже или нашей работе. После проверки мы разместим отзыв на сайте.</p>
+<div class="reviews-list">
+<article class="review-card review-real has-photos">
+<div class="rv-gallery" data-gallery="igor">
+<button aria-label="Открыть фото: Угол дома, облицованный гибким ригелем двух оттенков" class="rv-main" data-i="0" type="button"><img alt="Угол дома, облицованный гибким ригелем двух оттенков" decoding="async" src="assets/reviews/igor-1.jpg"/></button>
+<div class="rv-thumbs">
+<button aria-label="Открыть фото: Фасад с окнами: горизонтальная и вертикальная укладка ригеля" class="rv-thumb" data-i="1" type="button"><img alt="Фасад с окнами: горизонтальная и вертикальная укладка ригеля" decoding="async" loading="lazy" src="assets/reviews/igor-2-s.jpg"/></button>
+<button aria-label="Открыть фото: Стена дома с вертикальной вставкой над окном" class="rv-thumb" data-i="2" type="button"><img alt="Стена дома с вертикальной вставкой над окном" decoding="async" loading="lazy" src="assets/reviews/igor-3-s.jpg"/></button>
+<button aria-label="Открыть фото: Колонна у входа, облицованная гибким ригелем" class="rv-thumb" data-i="3" type="button"><img alt="Колонна у входа, облицованная гибким ригелем" decoding="async" loading="lazy" src="assets/reviews/igor-4-s.jpg"/></button>
+<button aria-label="Открыть фото: Фактура гибкого ригеля крупным планом" class="rv-thumb" data-i="4" type="button"><img alt="Фактура гибкого ригеля крупным планом" decoding="async" loading="lazy" src="assets/reviews/igor-5-s.jpg"/></button>
+</div>
+</div>
+<div class="rv-body">
+<svg class="quote-mark" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M7 8a3 3 0 00-3 3v5h5v-5H6a2 2 0 012-2V8z"></path><path d="M17 8a3 3 0 00-3 3v5h5v-5h-3a2 2 0 012-2V8z"></path></svg>
+<div aria-label="Оценка 5 из 5" class="stars stars-gold"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><polygon points="12 3 14.6 8.6 21 9.3 16.3 13.6 17.6 20 12 16.8 6.4 20 7.7 13.6 3 9.3 9.4 8.6"></polygon></svg></div>
+<p class="text">Заказывали гибкий ригель для фасада нашего дома. Ребята выполнили работу отлично: всё сделано качественно и аккуратно, результатом мы очень довольны. Спасибо за профессионализм и ответственное отношение к делу! Смело рекомендуем.</p>
+<div class="who">
+<p class="name">Игорь</p>
+<p class="meta">Фасад дома, гибкий ригель</p>
+</div>
+</div>
+</article>
+</div>
+<div class="review-cta">
+<p>Тоже облицовывали дом с FlexBrick? Поделитесь впечатлениями — можно приложить фото объекта.</p>
 <button class="btn btn-primary" id="openReview" type="button">Оставить отзыв</button>
 </div>
 </div>
@@ -1743,6 +1799,7 @@
 <label for="r-text">Ваш отзыв</label>
 <textarea id="r-text" placeholder="Что понравилось, как выглядит фасад, как прошёл монтаж…" rows="5"></textarea>
 </div>
+<p class="review-photo-hint"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span><b>Хотите добавить фото объекта?</b> После нажатия кнопки откроется письмо — прикрепите к нему фото перед отправкой. Мы разместим его вместе с отзывом.</span></p>
 <label class="consent-row">
 <input id="r-consent" type="checkbox"/>
 <span>Согласен(-на) на <button class="policy-link" id="openPolicyReview" type="button">обработку персональных данных</button> и публикацию отзыва на сайте</span>
@@ -2233,7 +2290,7 @@
       if(ch==='email'){
         var href='mailto:'+REV_EMAIL+'?subject='+encodeURIComponent('Отзыв с сайта FlexBrick')+'&body='+encodeURIComponent(text);
         copy(text).then(function(){
-          say('Открываем почту с готовым письмом — просто нажмите «Отправить». Если почта не открылась, текст отзыва уже скопирован: отправьте его на <a href="mailto:'+REV_EMAIL+'">'+REV_EMAIL+'</a> или <a href="'+href+'">откройте письмо ещё раз</a>.', true);
+          say('Открываем почту с готовым письмом. Прикрепите фото объекта, если хотите, и нажмите «Отправить». Если почта не открылась, текст отзыва уже скопирован: отправьте его на <a href="mailto:'+REV_EMAIL+'">'+REV_EMAIL+'</a> или <a href="'+href+'">откройте письмо ещё раз</a>.', true);
           window.location.href=href;
         });
         return;
@@ -2245,6 +2302,32 @@
       });
     });
   });
+})();
+</script>
+<script id="flexbrick-review-photos-js">
+// Фото к отзывам: просмотр крупно, листание стрелками и свайпом
+(function(){
+  var galleries=document.querySelectorAll('.rv-gallery'); if(!galleries.length) return;
+  var lb=document.createElement('div'); lb.className='rv-lb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-label','Фото объекта');
+  lb.innerHTML='<button type="button" class="rv-lb-close" aria-label="Закрыть">×</button><button type="button" class="rv-lb-nav rv-lb-prev" aria-label="Предыдущее фото">‹</button><img alt=""/><button type="button" class="rv-lb-nav rv-lb-next" aria-label="Следующее фото">›</button><div class="rv-lb-cap"></div>';
+  document.body.appendChild(lb);
+  var img=lb.querySelector('img'), cap=lb.querySelector('.rv-lb-cap'), list=[], idx=0;
+  function show(i){ idx=(i+list.length)%list.length; img.src=list[idx].src; img.alt=list[idx].alt; cap.textContent=(idx+1)+' / '+list.length+' — '+list[idx].alt; }
+  function open(g,i){
+    list=[].slice.call(g.querySelectorAll('img')).map(function(im){ return {src:im.getAttribute('src').replace('-s.jpg','.jpg'), alt:im.alt}; });
+    show(i); lb.classList.add('open'); document.documentElement.style.overflow='hidden';
+  }
+  function close(){ lb.classList.remove('open'); document.documentElement.style.overflow=''; }
+  [].forEach.call(galleries,function(g){
+    [].forEach.call(g.querySelectorAll('button[data-i]'),function(b){ b.addEventListener('click',function(){ open(g,+b.getAttribute('data-i')); }); });
+  });
+  lb.querySelector('.rv-lb-close').addEventListener('click',close);
+  lb.querySelector('.rv-lb-prev').addEventListener('click',function(e){ e.stopPropagation(); show(idx-1); });
+  lb.querySelector('.rv-lb-next').addEventListener('click',function(e){ e.stopPropagation(); show(idx+1); });
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowLeft') show(idx-1); if(e.key==='ArrowRight') show(idx+1); });
+  var x0=null; lb.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  lb.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50) show(idx+(dx<0?1:-1)); x0=null; });
 })();
 </script>
 </body>
