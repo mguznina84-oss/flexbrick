@@ -2,6 +2,19 @@
 
 <html lang="ru">
 <head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114216201', 'ym');
+
+    ym(114216201, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114216201" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Гибкий клинкер, гибкий кирпич и ригель в Калининграде — FlexBrick, производство и монтаж</title>
@@ -1447,11 +1460,11 @@
 <div class="field-row">
 <div class="field">
 <label for="f-name">Имя</label>
-<input id="f-name" name="name" placeholder="Как к вам обращаться" required="" type="text"/>
+<input class="ym-disable-keys" id="f-name" name="name" placeholder="Как к вам обращаться" required="" type="text"/>
 </div>
 <div class="field">
 <label for="f-phone">Телефон</label>
-<input id="f-phone" name="phone" placeholder="+7 (___) ___-__-__" required="" type="tel"/>
+<input class="ym-disable-keys" id="f-phone" name="phone" placeholder="+7 (___) ___-__-__" required="" type="tel"/>
 </div>
 </div>
 <label class="consent-row">
@@ -1804,16 +1817,16 @@
 <div class="field-row">
 <div class="field">
 <label for="r-name">Имя</label>
-<input autocomplete="name" id="r-name" placeholder="Как вас зовут" type="text"/>
+<input class="ym-disable-keys" autocomplete="name" id="r-name" placeholder="Как вас зовут" type="text"/>
 </div>
 <div class="field">
 <label for="r-object">Объект и город <span class="opt">(необязательно)</span></label>
-<input id="r-object" placeholder="Например: фасад дома, Зеленоградск" type="text"/>
+<input class="ym-disable-keys" id="r-object" placeholder="Например: фасад дома, Зеленоградск" type="text"/>
 </div>
 </div>
 <div class="field">
 <label for="r-text">Ваш отзыв</label>
-<textarea id="r-text" placeholder="Что понравилось, как выглядит фасад, как прошёл монтаж…" rows="5"></textarea>
+<textarea class="ym-disable-keys" id="r-text" placeholder="Что понравилось, как выглядит фасад, как прошёл монтаж…" rows="5"></textarea>
 </div>
 <p class="review-photo-hint"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span><b>Хотите добавить фото объекта?</b> После отправки текста просто прикрепите фото в письмо или следующим сообщением в MAX / Telegram. Мы разместим его вместе с отзывом.</span></p>
 <label class="consent-row">
@@ -1842,6 +1855,7 @@
 <p><strong>6. Хранение и удаление.</strong> Данные хранятся не дольше, чем необходимо для обработки заявки, либо до отзыва согласия пользователем.</p>
 <p><strong>7. Права пользователя.</strong> Пользователь может в любой момент отозвать согласие и потребовать удаления своих данных, написав на <a href="mailto:flexbrick_39@mail.ru">flexbrick_39@mail.ru</a>.</p>
 <p><strong>8. Контакты Оператора.</strong> ИП Богданова Ирина Владимировна, ИНН 390610799661, ОГРНИП 324390000023172. Телефон: +7 (996) 959-79-22, почта: flexbrick_39@mail.ru, адрес производства: Россия, Калининградская область, Зеленоградский район, посёлок Сосновка, улица Лучистая, дом 6.</p>
+<p><strong>9. Файлы cookie и статистика.</strong> Сайт использует сервис веб-аналитики Яндекс Метрика (ООО «Яндекс»), который с помощью файлов cookie собирает обезличенные данные о посещениях: страницы, переходы, тип устройства, примерное местоположение, действия на сайте. Данные используются только для анализа и улучшения работы сайта. Отключить сбор можно, запретив файлы cookie в настройках браузера. Введённые в формы имена, телефоны и тексты отзывов в записи посещений не сохраняются.</p>
 </div>
 </div>
 </div>
@@ -2349,6 +2363,34 @@
   document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowLeft') show(idx-1); if(e.key==='ArrowRight') show(idx+1); });
   var x0=null; lb.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
   lb.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50) show(idx+(dx<0?1:-1)); x0=null; });
+})();
+</script>
+<script id="flexbrick-metrika-goals">
+// Цели Яндекс Метрики: считаем заявки, отзывы и интерес к калькулятору (не меняет работу кнопок)
+(function(){
+  var ID=114216201;
+  function goal(name){ try{ if(window.ym) ym(ID,'reachGoal',name); }catch(e){} }
+  function val(id){ var el=document.getElementById(id); return el ? String(el.value||'').trim() : ''; }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest ? e.target.closest('[data-channel],[data-rch],#heroCalcBtn,#heroMeasureNote,#reelsMeasureBtn,#customColorBtn,#openReview') : null;
+    if(!t) return;
+    if(t.hasAttribute('data-channel')){
+      var f=document.getElementById('orderForm'); var ph=f ? f.querySelector('[name=phone]') : null;
+      var ok=val('f-name') && ph && String(ph.value).replace(/\D/g,'').length>=10 && (document.getElementById('f-consent')||{}).checked;
+      if(ok){ goal('zayavka'); goal('zayavka_'+t.getAttribute('data-channel')); }
+      return;
+    }
+    if(t.hasAttribute('data-rch')){
+      var rated=document.querySelector('#reviewRate .rate-star.on');
+      var ok2=rated && val('r-name') && val('r-text').length>=5 && (document.getElementById('r-consent')||{}).checked;
+      if(ok2){ goal('otzyv'); }
+      return;
+    }
+    if(t.id==='heroCalcBtn') goal('knopka_kalkulyator');
+    else if(t.id==='heroMeasureNote' || t.id==='reelsMeasureBtn') goal('knopka_zamer');
+    else if(t.id==='customColorBtn') goal('knopka_svoj_cvet');
+    else if(t.id==='openReview') goal('otzyv_otkryl');
+  },true);
 })();
 </script>
 </body>
