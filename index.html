@@ -1640,7 +1640,7 @@
     if (calcState.mount && matArea){
       var mountPrice = calcState.mountZone === 'outside' ? MOUNT_PRICE_OUTSIDE : MOUNT_PRICE_CITY;
       var mountTotal = matArea * mountPrice;
-      var zoneLabel = calcState.mountZone === 'outside' ? 'за городом' : 'в городе';
+      var zoneLabel = calcState.mountZone === 'outside' ? 'за пределами Калининграда и Зеленоградского р-на' : 'Калининград / Зеленоградский р-н';
       calcLines.push('Монтаж (' + zoneLabel + '): ' + matArea + ' м² × ' + fmtMoney(mountPrice) + '/м² = ' + fmtMoney(mountTotal));
       total += mountTotal;
       hasCalc = true;
@@ -1876,7 +1876,7 @@
 
   var GLUE_PRICE = 800; // ₽/м² (одна на все материалы)
 
-  var MOUNT_PRICE_CITY    = 1000; // ₽/м² — в Калининграде и в радиусе 1 км
+  var MOUNT_PRICE_CITY    = 1000; // ₽/м² — Калининград и Зеленоградский район (+1 км)
   var MOUNT_PRICE_OUTSIDE = 1100; // ₽/м² — за пределами этой зоны
 
   var RESERVE_OPTIONS = [
@@ -1994,11 +1994,11 @@
     group.className = 'calc-materials';
     group.style.marginBottom = '20px';
     group.setAttribute('role', 'group');
-    group.setAttribute('aria-label', 'Город или за городом');
+    group.setAttribute('aria-label', 'Где находится объект');
 
     [
-      { val:'city',    label:'В городе (Калининград + 1 км)' },
-      { val:'outside', label:'За городом (дальше 1 км)' }
+      { val:'city',    label:'Калининград и Зеленоградский р-н (+1 км)' },
+      { val:'outside', label:'За пределами этой зоны' }
     ].forEach(function(opt){
       var btn = document.createElement('button');
       btn.type = 'button';
