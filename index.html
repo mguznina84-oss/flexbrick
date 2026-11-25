@@ -2405,7 +2405,7 @@
   },true);
 })();
 </script>
-<!-- Зимнее предложение: всплывает сбоку через несколько секунд, закрывается крестиком -->
+<!-- Зимнее предложение: периодически всплывает справа и само прячется -->
 <style id="flexbrick-season-toast-style">
 .season-toast{position:fixed;right:22px;bottom:96px;z-index:59;width:350px;max-width:calc(100vw - 44px);
 background:linear-gradient(180deg,#FFFDF7 0%,#F8F2E4 100%);color:var(--ink);border:2px solid #B3261E;border-radius:20px;
@@ -2455,16 +2455,24 @@ background:repeating-linear-gradient(135deg,#B3261E 0 10px,#fff 10px 20px,#2E7D4
 <a class="st-btn" href="#contact" id="seasonStrip">Узнать стоимость</a>
 </div>
 <script id="flexbrick-season-toast-js">
+// Окошко: появляется через 6 с, висит 10 с и прячется; потом снова через 40 с.
+// Крестик прячет его, но через 90 с оно появится снова. Наведение мышкой — не прячется, пока курсор на окошке.
 (function(){
-  var KEY='fb_season_toast_closed', DAYS=3, box=document.getElementById('seasonToast');
-  if(!box) return;
-  function closedRecently(){ try{ var t=+localStorage.getItem(KEY); return t && (Date.now()-t) < DAYS*864e5; }catch(e){ return false; } }
-  function remember(){ try{ localStorage.setItem(KEY,String(Date.now())); }catch(e){} }
-  function hide(){ box.classList.remove('show'); remember(); }
-  if(closedRecently()) return;
-  setTimeout(function(){ if(location.hash!=='#contact') box.classList.add('show'); },6000);
-  document.getElementById('seasonToastClose').addEventListener('click',hide);
-  document.getElementById('seasonStrip').addEventListener('click',hide);
+  var box=document.getElementById('seasonToast'); if(!box) return;
+  var FIRST=6000, SHOW=10000, PAUSE=40000, AFTER_CLOSE=90000, MAX=6;
+  var timer=null, shownCount=0, hover=false, stopped=false;
+  function later(fn,ms){ clearTimeout(timer); timer=setTimeout(fn,ms); }
+  function show(){
+    if(stopped || shownCount>=MAX) return;
+    if(location.hash==='#contact'){ later(show,PAUSE); return; }
+    box.classList.add('show'); shownCount++; later(autoHide,SHOW);
+  }
+  function autoHide(){ if(hover){ later(autoHide,2000); return; } box.classList.remove('show'); later(show,PAUSE); }
+  box.addEventListener('mouseenter',function(){hover=true;});
+  box.addEventListener('mouseleave',function(){hover=false;});
+  document.getElementById('seasonToastClose').addEventListener('click',function(){ hover=false; box.classList.remove('show'); later(show,AFTER_CLOSE); });
+  document.getElementById('seasonStrip').addEventListener('click',function(){ stopped=true; clearTimeout(timer); box.classList.remove('show'); });
+  later(show,FIRST);
 })();
 </script>
 </body>
