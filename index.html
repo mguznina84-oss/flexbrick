@@ -927,8 +927,89 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 @media (max-width:1000px){.foot-grid{grid-template-columns:1fr 1fr;}}
 @media (max-width:600px){.foot-grid{grid-template-columns:1fr;gap:28px;}.foot-links{flex-direction:row;flex-wrap:wrap;gap:8px 16px;}.foot-links h4{width:100%;margin-bottom:4px;}footer{padding-bottom:96px;}}
 </style>
+<style id="flexbrick-header-style">
+.topstrip{background:linear-gradient(90deg,var(--brick-deep),var(--brick));color:var(--cream);font-size:.82rem;}
+.topstrip-in{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:7px 20px;}
+.ts-item{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+.ts-item svg{width:15px;height:15px;flex:none;opacity:.9;}
+.ts-links a{color:var(--cream);text-decoration:none;font-weight:600;padding:2px 9px;border-radius:999px;background:rgba(255,255,255,.12);margin-left:4px;}
+.ts-links a:hover{background:rgba(255,255,255,.24);}
+header{border-bottom:1px solid rgba(196,103,72,.35) !important;box-shadow:0 6px 18px rgba(0,0,0,.18);}
+.head-cta{display:inline-flex;align-items:center;background:var(--brick);color:var(--cream);text-decoration:none;font-weight:600;font-size:.92rem;padding:10px 18px;border-radius:999px;white-space:nowrap;transition:background .2s,transform .2s;box-shadow:0 4px 14px rgba(166,64,42,.35);}
+.head-cta:hover{background:var(--brick-light);transform:translateY(-1px);}
+.hc-short{display:none;}
+.brand-sub{display:none !important;}
+@media (max-width:1500px){.mainnav{gap:16px !important;}}
+@media (max-width:1180px){.ts-mid{display:none;}}
+@media (max-width:1080px){.hc-long{display:none;}.hc-short{display:inline;}.head-cta{padding:8px 14px;font-size:.88rem;}}
+@media (max-width:1080px){nav.mainnav{top:var(--menu-top,64px) !important;}}
+@media (max-width:700px){.ts-item:first-child{display:none;}.topstrip-in{justify-content:center;padding:6px 12px;}.ts-links a{padding:2px 8px;}}
+</style>
+<style id="flexbrick-material-cards-style">
+.flexbrick-material-folder{border-radius:20px !important;transition:box-shadow .2s,transform .2s;}
+.flexbrick-material-folder:not([open]):hover{box-shadow:0 12px 28px rgba(60,44,31,.12) !important;transform:translateY(-2px);}
+.flexbrick-material-summary{gap:20px !important;padding:14px 22px 14px 14px !important;}
+.fm-photo{width:150px;height:104px;object-fit:cover;border-radius:14px;flex:none;display:block;}
+.fm-info{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;}
+.fm-info .flexbrick-material-name{font-size:1.3rem;line-height:1.2;}
+.fm-meta,.fm-tags,.fm-open{font-family:'Golos Text', system-ui, sans-serif;}
+.fm-info .flexbrick-material-name{font-family:'Alegreya', Georgia, serif;}
+.fm-meta{font-size:.9rem;font-weight:500;color:var(--muted);}
+.fm-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px;}
+.fm-price{background:var(--brick);color:var(--cream);font-size:.85rem;font-weight:700;padding:4px 12px;border-radius:999px;}
+.fm-cols{background:#f5ebe3;color:#97573b;font-size:.85rem;font-weight:600;padding:4px 12px;border-radius:999px;}
+.fm-open{display:flex;align-items:center;gap:8px;color:var(--brick);font-size:.95rem;font-weight:600;white-space:nowrap;}
+.fm-open .flexbrick-material-chevron{font-size:24px;line-height:1;}
+.flexbrick-material-folder[open] .fm-open-txt{font-size:0;}
+.flexbrick-material-folder[open] .fm-open-txt::after{content:"Свернуть";font-size:.95rem;}
+@media(max-width:600px){
+.flexbrick-material-summary{gap:12px !important;padding:10px 12px 10px 10px !important;align-items:center;}
+.fm-photo{width:88px;height:88px;border-radius:12px;}
+.fm-info .flexbrick-material-name{font-size:1.08rem;}
+.fm-meta{font-size:.8rem;}
+.fm-price,.fm-cols{font-size:.76rem;padding:3px 9px;}
+.fm-open-txt{display:none;}
+}
+</style>
+<style id="flexbrick-hero-stats-style">
+.hero-stats{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0;}
+.hero-stats li{display:flex;flex-direction:column;gap:2px;padding:0 20px;border-left:1px solid rgba(248,242,228,.16);}
+.hero-stats li:first-child{padding-left:0;border-left:0;}
+.hero-stats b{font-family:'Alegreya', Georgia, serif;font-size:1.45rem;line-height:1.1;color:var(--cream);font-weight:800;white-space:nowrap;}
+.hero-stats li:first-child b{color:var(--brick-light);}
+.hero-stats span{font-size:.8rem;color:var(--muted-on-dark);white-space:nowrap;}
+@media(max-width:600px){.hero-stats{grid-template-columns:1fr 1fr;gap:14px 0;}
+.hero-stats li{padding:0 12px;}.hero-stats li:nth-child(odd){padding-left:0;border-left:0;}
+.hero-stats b{font-size:1.25rem;}}
+@media(max-width:600px){.hero-note{padding-right:64px;}}
+</style>
+<style id="flexbrick-form-steps-style">
+.form-steps{margin-top:26px;padding-top:22px;border-top:1px dashed rgba(42,36,25,.18);}
+.fs-title{margin:0 0 14px;font-weight:700;color:var(--brick);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;}
+.form-steps ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+.form-steps li{display:flex;gap:12px;align-items:flex-start;font-size:.93rem;line-height:1.45;color:var(--muted);}
+.form-steps li b{color:var(--ink);}
+.fs-n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--brick);color:var(--cream);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;}
+.fs-note{margin:16px 0 0;font-size:.85rem;color:var(--muted);}
+</style>
+<style id="flexbrick-mat-intro-style">
+.mat-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;margin-bottom:8px;}
+.mat-intro .section-head{margin-bottom:0;}
+.mat-intro-photo{margin:0;position:relative;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(42,36,25,.18);aspect-ratio:4/3;}
+.mat-intro-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.mat-intro-photo figcaption{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(35,31,25,.82);color:var(--cream);padding:10px 14px;border-radius:12px;font-size:.88rem;line-height:1.4;backdrop-filter:blur(4px);}
+.mat-intro-photo figcaption b{color:var(--brick-light);}
+@media(max-width:900px){.mat-intro{grid-template-columns:1fr;gap:20px;}.mat-intro-photo{display:none;}}
+</style>
 </head>
 <body>
+<div class="topstrip" role="note">
+<div class="wrap topstrip-in">
+<span class="ts-item"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V10l6 3V10l6 3V6l6 3v12z"></path></svg>Своё производство в Калининградской области</span>
+<span class="ts-item ts-mid"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 2l3.5 7 7.5 1-5.5 5.3L18.7 22 12 18.3 5.3 22 6.5 15.3 1 10l7.5-1z"></path></svg>Бесплатный замер по Калининграду и Зеленоградскому р-ну</span>
+<span class="ts-item ts-links">Написать: <a href="https://t.me/+79969597922" rel="noopener" target="_blank">Telegram</a><a href="https://max.ru/u/f9LHodD0cOLhrjKRdRV2br1-doDo0_tW6ZvjS0dF_LauZdzuBnW1nWxojf4" rel="noopener" target="_blank">MAX</a><a href="mailto:flexbrick_39@mail.ru">Почта</a></span>
+</div>
+</div>
 <header>
 <div class="wrap headbar">
 <a aria-label="FlexBrick — гибкий клинкер, на главную" class="brand" href="#hero">
@@ -948,6 +1029,7 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 <a href="#contact">Контакты</a>
 </nav>
 <div class="head-actions">
+<a class="head-cta" href="#contact" id="headCta"><span class="hc-long">Оставить заявку</span><span class="hc-short">Заявка</span></a>
 <a aria-label="Написать на почту" class="icon-btn" href="mailto:flexbrick_39@mail.ru">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
 </a>
@@ -972,6 +1054,7 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
             Рассчитать стоимость
           </a>
 </div>
+<ul class="hero-stats" aria-label="Коротко о FlexBrick"><li><b>от 1000 ₽</b><span>за м² материала</span></li><li><b>28+</b><span>цветов, или ваш</span></li><li><b>20–30 лет</b><span>срок службы</span></li><li><b>Своё</b><span>производство</span></li></ul>
 <p class="hero-note" id="heroMeasureNote" role="link" tabindex="0" aria-label="Бесплатный выезд на замер — оставить заявку">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 2l3.5 7 7.5 1-5.5 5.3L18.7 22 12 18.3 5.3 22 6.5 15.3 1 10l7.5-1z"></path></svg>
           Бесплатный выезд на замер — по Калининграду и Зеленоградскому району, включая Зеленоградск, и в радиусе 1 км от них.
@@ -992,10 +1075,13 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 <!-- О МАТЕРИАЛЕ (вкладки: Свойства / Применение / Монтаж) -->
 <section id="material">
 <div class="wrap">
+<div class="mat-intro">
 <div class="section-head">
 <p class="eyebrow">О материале</p>
 <h2>Гибкий клинкер: кладка без кирпича</h2>
 <p class="lead">Гибкий клинкер — его ещё называют гибким кирпичом или гибкой плиткой под кирпич — современный экологичный отделочный материал на природной минеральной основе. Внешне и на ощупь повторяет кирпичную кладку, но остаётся эластичным, лёгким и простым в монтаже.</p>
+</div>
+<figure class="mat-intro-photo"><img alt="Монтаж гибкого клинкера: плитку прикладывают на клей-фугу поштучно" decoding="async" loading="lazy" src="assets/img/img-076.jpg"/><figcaption><b>Простой монтаж</b> — поштучно на клей-фугу, без «мокрой» кладки</figcaption></figure>
 </div>
 <div aria-label="О материале" class="tabbar" role="tablist">
 <button aria-selected="true" class="tab-btn tab-red active" data-tab="props" role="tab" type="button">Свойства</button>
@@ -1115,7 +1201,7 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 <div class="section-head">
 <p class="eyebrow">Каталог материалов</p>
 <h2>Цвета и фактуры</h2>
-<p class="lead">Четыре линейки материала — выбирайте вкладку, чтобы увидеть стандартные цвета и текстуры.</p>
+<p class="lead">Четыре линейки материала — нажмите на карточку, чтобы увидеть все стандартные цвета и текстуры.</p>
 </div>
 
 <div class="custom-color">
@@ -1126,7 +1212,7 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 </div>
 <a class="btn btn-primary cc-btn" href="#contact" id="customColorBtn">Обсудить свой цвет</a>
 </div>
-<details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><span aria-hidden="true" class="flexbrick-material-icon">▤</span><span class="flexbrick-material-name">Гибкий клинкер</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-gk">
+<details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><img alt="Гибкий клинкер — пример объекта" class="fm-photo" decoding="async" loading="lazy" src="assets/img/img-078.jpg"/><span class="fm-info"><span class="flexbrick-material-name">Гибкий клинкер</span><span class="fm-meta">Кирпичная кладка · 250 × 65 × 4 мм</span><span class="fm-tags"><span class="fm-price">от 1000 ₽/м²</span><span class="fm-cols">28 цветов</span></span></span><span class="fm-open"><span class="fm-open-txt">Смотреть цвета</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-gk">
 <p class="lead" style="margin-bottom:22px;"><strong>Формат (штучный):</strong> 250 × 65 × 4 мм, вес 80 г.</p>
 <p class="lead" style="margin-bottom:18px;">Эффекты поверхности — какой рельеф и обжиг доступен:</p>
 <div class="catalog-grid" style="margin-bottom:36px;">
@@ -1168,7 +1254,7 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 <div class="cat-card has-photo"><img alt="ГК-27" loading="lazy" src="assets/img/img-037.jpg"/><span class="cap">ГК-27</span></div>
 <div class="cat-card has-photo"><img alt="ГК-28" loading="lazy" src="assets/img/img-038.jpg"/><span class="cap">ГК-28</span></div>
 </div>
-</div></div></details><details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><span aria-hidden="true" class="flexbrick-material-icon">▤</span><span class="flexbrick-material-name">Ригель</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-rigel">
+</div></div></details><details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><img alt="Ригель — пример объекта" class="fm-photo" decoding="async" loading="lazy" src="assets/img/img-095.jpg"/><span class="fm-info"><span class="flexbrick-material-name">Ригель</span><span class="fm-meta">Длинный «европейский» кирпич · 3 длины</span><span class="fm-tags"><span class="fm-price">от 1000 ₽/м²</span><span class="fm-cols">12 цветов</span></span></span><span class="fm-open"><span class="fm-open-txt">Смотреть цвета</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-rigel">
 <p class="lead" style="margin-bottom:22px;"><strong>Формат (штучный):</strong> 47 × 485 × 4, 47 × 330 × 4 и 47 × 240 × 4 мм; вес 119, 90 и 69 г.</p>
 <p class="lead" style="margin-bottom:18px;">Цвета и текстуры — 12 готовых образцов ГР-1–ГР-12:</p>
 <div class="catalog-grid">
@@ -1185,7 +1271,7 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 <div class="cat-card has-photo"><img alt="ГР-11" loading="lazy" src="assets/img/img-049.jpg"/><span class="cap">ГР-11</span></div>
 <div class="cat-card has-photo"><img alt="ГР-12" loading="lazy" src="assets/img/img-050.jpg"/><span class="cap">ГР-12</span></div>
 </div>
-</div></div></details><details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><span aria-hidden="true" class="flexbrick-material-icon">▤</span><span class="flexbrick-material-name">Доска</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-doska">
+</div></div></details><details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><img alt="Доска — пример объекта" class="fm-photo" decoding="async" loading="lazy" src="assets/img/img-097.jpg"/><span class="fm-info"><span class="flexbrick-material-name">Доска</span><span class="fm-meta">Фактура дерева · не гниёт, не красится</span><span class="fm-tags"><span class="fm-price">от 2600 ₽/м²</span><span class="fm-cols">4 цвета</span></span></span><span class="fm-open"><span class="fm-open-txt">Смотреть цвета</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-doska">
 <p class="lead" style="margin-bottom:22px;"><strong>Формат:</strong> широкая 960 × 200 × 4 и 3000 × 200 × 4 мм (1050 и 3250 г); узкая 960 × 120 × 4 и 3000 × 120 × 4 мм (800 и 2500 г).</p>
 <p class="lead" style="margin-bottom:18px;">Цвета и текстуры — образцы ГД-1–ГД-4:</p>
 <div class="catalog-grid">
@@ -1194,7 +1280,7 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 <div class="cat-card has-photo"><img alt="ГД-3" loading="lazy" src="assets/img/img-053.jpg"/><span class="cap">ГД-3</span></div>
 <div class="cat-card has-photo"><img alt="ГД-4" loading="lazy" src="assets/img/img-053.jpg"/><span class="cap">ГД-4</span></div>
 </div>
-</div></div></details><details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><span aria-hidden="true" class="flexbrick-material-icon">▤</span><span class="flexbrick-material-name">Каменный скол</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-skol">
+</div></div></details><details class="flexbrick-material-folder"><summary class="flexbrick-material-summary"><img alt="Каменный скол — пример объекта" class="fm-photo" decoding="async" loading="lazy" src="assets/img/img-099.jpg"/><span class="fm-info"><span class="flexbrick-material-name">Каменный скол</span><span class="fm-meta">Под природный камень · цоколь, колонны</span><span class="fm-tags"><span class="fm-price">от 1000 ₽/м²</span><span class="fm-cols">16 цветов</span></span></span><span class="fm-open"><span class="fm-open-txt">Смотреть цвета</span><span aria-hidden="true" class="flexbrick-material-chevron">⌄</span></span></summary><div class="flexbrick-material-body"><div class="tab-panel active" data-panel="mat-skol">
 <p class="lead" style="margin-bottom:22px;"><strong>Форматы:</strong> листовой 950 × 500 × 4 мм (3100 г); рваный — любой размер (3000 г); гибкие обои 3000 × 490 × 5 мм (9000 г).</p>
 <p class="lead" style="margin-bottom:18px;">Цвета и текстуры — 16 готовых образцов ГКС-1–ГКС-16:</p>
 <div class="catalog-grid">
@@ -1367,7 +1453,7 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 <div class="faq">
 <details open="">
 <summary>Какие материалы вы производите?<span class="plus"></span></summary>
-<p>Гибкий клинкер, ригель и доску — линейку экологичных фасадных и интерьерных материалов на природной минеральной основе, имитирующих кирпичную кладку.</p>
+<p>Гибкий клинкер, ригель, гибкую доску и каменный скол — линейку экологичных фасадных и интерьерных материалов на природной минеральной основе, имитирующих кирпичную кладку.</p>
 </details>
 <details>
 <summary>Гибкий клинкер, гибкий кирпич, гибкая плитка — это одно и то же?<span class="plus"></span></summary>
@@ -1533,6 +1619,15 @@ footer{background:var(--charcoal);color:var(--muted-on-dark);padding:56px 0 26px
 </div>
 <p class="form-note">Нажмите на удобный способ — заявка откроется с готовым текстом. Если мессенджеры не работают, отправьте её по электронной почте.</p>
 <div class="form-status" id="formStatus" role="status"></div>
+<div class="form-steps">
+<p class="fs-title">Что будет после заявки</p>
+<ol>
+<li><span class="fs-n">1</span><span><b>Свяжемся с вами</b> в ближайшее время — ответим на вопросы и договоримся о времени.</span></li>
+<li><span class="fs-n">2</span><span><b>Приедем на замер</b> — покажем образцы цветов и подберём материал.</span></li>
+<li><span class="fs-n">3</span><span><b>Пришлём точную смету</b> — материал, клей-фуга и монтаж, без скрытых доплат.</span></li>
+</ol>
+<p class="fs-note">Заявка ни к чему не обязывает.</p>
+</div>
 </form>
 </div>
 </section>
@@ -2519,6 +2614,40 @@ background:repeating-linear-gradient(135deg,#B3261E 0 10px,#fff 10px 20px,#2E7D4
   document.getElementById('seasonToastClose').addEventListener('click',function(){ hover=false; box.classList.remove('show'); later(show,AFTER_CLOSE); });
   document.getElementById('seasonStrip').addEventListener('click',function(){ stopped=true; clearTimeout(timer); box.classList.remove('show'); });
   later(show,FIRST);
+})();
+</script>
+<script id="flexbrick-header-js">
+// Меню на телефоне открывается ровно под шапкой (с учётом красной полоски сверху)
+(function(){
+  var h=document.querySelector('header'); if(!h) return;
+  function upd(){ document.documentElement.style.setProperty('--menu-top', Math.max(0,h.getBoundingClientRect().bottom)+'px'); }
+  upd(); addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd);
+  var bt=document.getElementById('burger'); if(bt) bt.addEventListener('click',upd,true);
+})();
+</script>
+<style id="flexbrick-works-more-style">
+#catalog .works-grid{column-count:initial !important;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+#catalog .works-grid .work{margin:0 !important;break-inside:auto;aspect-ratio:4/3;overflow:hidden;}
+#catalog .works-grid .work img{width:100%;height:100%;object-fit:cover;display:block;}
+@media(max-width:900px){#catalog .works-grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
+.works-grid .work.wm-hidden{display:none;}
+.works-more-wrap{text-align:center;margin-top:22px;}
+.works-more{display:inline-flex;align-items:center;gap:8px;background:transparent;border:2px solid var(--brick);color:var(--brick);font:inherit;font-weight:700;padding:11px 24px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s;}
+.works-more:hover{background:var(--brick);color:var(--cream);}
+</style>
+<script id="flexbrick-works-more-js">
+// Галерея объектов: сначала 6 фото, остальные — по кнопке «Показать ещё»
+(function(){
+  var SHOW=6;
+  document.querySelectorAll('#catalog .works-grid').forEach(function(grid){
+    var items=grid.querySelectorAll('.work'); if(items.length<=SHOW) return;
+    for(var i=SHOW;i<items.length;i++) items[i].classList.add('wm-hidden');
+    var wrap=document.createElement('div'); wrap.className='works-more-wrap';
+    var btn=document.createElement('button'); btn.type='button'; btn.className='works-more';
+    btn.textContent='Показать ещё '+(items.length-SHOW)+' фото';
+    btn.addEventListener('click',function(){ grid.querySelectorAll('.wm-hidden').forEach(function(f){f.classList.remove('wm-hidden');}); wrap.remove(); });
+    wrap.appendChild(btn); grid.parentNode.insertBefore(wrap,grid.nextSibling);
+  });
 })();
 </script>
 </body>
